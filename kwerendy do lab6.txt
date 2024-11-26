@@ -1,0 +1,12 @@
+SELECT AVG(waga) FROM kreatura WHERE rodzaj="wiking";
+
+SELECT AVG(waga), COUNT(rodzaj), rodzaj FROM kreatura GROUP BY rodzaj;
+
+SELECT AVG(year(dataUr)), rodzaj FROM kreatura GROUP BY rodzaj;
+
+SELECT rodzaj, SUM(waga) FROM zasob GROUP BY rodzaj;
+
+SELECT nazwa, AVG(waga) AS srednia_waga FROM zasob GROUP BY nazwa HAVING SUM(ilosc)>=4 AND SUM(waga)>10;
+
+SELECT rodzaj, COUNT(nazwa) from zasob WHERE ilosc>1 GROUP BY rodzaj;
+
